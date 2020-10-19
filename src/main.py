@@ -17,4 +17,13 @@ from sklearn.linear_model import LogisticRegression
 #   Patient average blood pressure
 #   Six blood serum measurements
 # All of these features are measured on 442 patients, and used
-# as an indicator of disease progression after one year.  
+# as an indicator of disease progression after one year.
+
+# First we load the dataset
+# Here we see that the "x" value represents each person and their
+# 10 features. While the "y" values represents each person.
+# The diabetes dataset is returned as a "regression" dataset
+data = load_diabetes()
+x, y = data['data'], data['target']
+print(x.shape)
+print(y.shape)
