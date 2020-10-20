@@ -39,3 +39,10 @@ y_ = np.zeros(y.shape)
 y_[y > 140] = 1.
 y_ = y_.astype(int)
 
+# Then we split our data into 80% training data and 20% testing data
+# The "random_state" parameter is used for reprodruction of the data. 
+# The stratify parameter makes sure that "y_" is equally represented 
+# in both training and test. This type of setup is called holdout.
+x_train, x_test, y_train, y_test = train_test_split(x, y_, test_size=0.2, random_state=42, stratify=y_)
+print("Train dataset:", x_train.shape, y_train.shape)
+print("Test dataset", x_test.shape, y_test.shape)
