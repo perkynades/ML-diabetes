@@ -27,3 +27,15 @@ data = load_diabetes()
 x, y = data['data'], data['target']
 print(x.shape)
 print(y.shape)
+
+# Since the diabetes dataset is loaded as a regression dataset,
+# we have to convert it to a classification problem.
+
+# First we create an array of zeros with the same size as "y"
+# Then we set each element to 1 in our "y_" array, where in the "y" array
+# the correspoding element is bigger than 140. Then we convert the values
+# of decimals in "y_" to integers.
+y_ = np.zeros(y.shape)
+y_[y > 140] = 1.
+y_ = y_.astype(int)
+
